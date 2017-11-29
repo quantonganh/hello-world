@@ -1,6 +1,8 @@
 # explicitly use Debian for maximum cross-architecture compatibility
 FROM debian:stretch-slim
 
+LABEL io.drone.ci=true
+
 RUN dpkg --add-architecture i386
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
